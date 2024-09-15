@@ -18,22 +18,32 @@ export function useMovies(query) {
           setIsLoading(true);
           setError("");
 
-          const res = await fetch(
-            `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
-            { signal: controller.signal }
-          );
+          const requestUrl = `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`;
+
+          // Log the request details
+          console.log("Request URL:", requestUrl);
+
+          const res = await fetch(requestUrl, { signal: controller.signal });
+
+          // Log the response status and headers
+          console.log("Response Status:", res.status);
+          console.log("Response Headers:", res.headers);
 
           if (!res.ok)
             throw new Error("Something went wrong with fetching movies");
 
           const data = await res.json();
+
+          // Log the response body (actual data)
+          console.log("Response Data:", data);
+
           if (data.Response === "False") throw new Error("Movie not found");
 
           setMovies(data.Search);
           setError("");
         } catch (err) {
           if (err.name !== "AbortError") {
-            console.log(err.message);
+            console.log("Error Message:", err.message);
             setError(err.message);
           }
         } finally {
