@@ -13,7 +13,7 @@ Popcorn is a movie exploration and tracking web app where users can search for m
 ## 🚀 Live Demo
 
 Check out the live version deployed on Vercel:  
-🔗 [Popcorn Movie App](https://popcorn-ey63ctspp-hoggscripts-projects.vercel.app/)
+🔗 [Popcorn Movie App](https://popcorn-app-dusky.vercel.app/)
 
 ## 🛠️ Technologies Used
 
@@ -22,12 +22,3 @@ Check out the live version deployed on Vercel:
 - **useState & useEffect**: For managing state and side effects.
 - **Custom Hooks**: `useKey` and `useLocalStorageState` are used for handling key events and persisting data.
 - **Vercel**: For hosting and deploying the project.
-
-## 📦 Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/popcorn-movie-app.git
-
